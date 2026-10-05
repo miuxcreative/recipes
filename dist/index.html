@@ -129,6 +129,92 @@
       .section-head { display: block; }
       main section { padding: 40px 0; }
     }
+    /* Editorial mineral direction, adapted from the GSPACE reference */
+    :root {
+      --ink: #1a1917;
+      --muted: #6d6a64;
+      --paper: #eeeae3;
+      --panel: #e5e0d7;
+      --line: rgba(26,25,23,.22);
+      --green: #617264;
+      --lime: #cfd8cc;
+      --coral: #1a1917;
+      --gold: #7a8a7c;
+      --white: #eeeae3;
+      --shadow: none;
+    }
+    body { font-family: "Avenir Next", "Gill Sans", ui-sans-serif, sans-serif; letter-spacing: .005em; }
+    h1, h2, .card h3, .master-brine h3, .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+    .topbar { background: rgba(238,234,227,.94); border-color: var(--line); }
+    .navrow { min-height: 76px; }
+    .brand { font-size: 1.2rem; font-style: italic; letter-spacing: -.015em; }
+    .index a {
+      border-radius: 0; padding: 9px 4px; margin-right: 14px;
+      font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600;
+      border-bottom: 1px solid transparent;
+    }
+    .index a:hover, .index a:focus-visible { background: transparent; border-color: var(--ink); }
+    .hero { padding-top: 24px; }
+    .hero-card { min-height: 500px; border-radius: 0; box-shadow: none; border: 1px solid var(--line); background-position: 66% center; }
+    .hero-card::after { background: linear-gradient(90deg, rgba(238,234,227,.98) 0%, rgba(238,234,227,.92) 40%, rgba(238,234,227,.05) 72%); }
+    .hero-copy { color: var(--ink); padding-left: clamp(28px, 6vw, 72px); }
+    .eyebrow { color: var(--green); font-size: .66rem; letter-spacing: .21em; font-weight: 600; }
+    h1 { font-size: clamp(3.2rem, 7vw, 6.6rem); line-height: .93; letter-spacing: -.045em; }
+    .hero p { color: rgba(26,25,23,.68); max-width: 39ch; }
+    .primary { border-radius: 0; box-shadow: none; background: var(--ink); color: var(--paper); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; }
+    .primary:active { transform: none; box-shadow: none; opacity: .72; }
+    .result { border-radius: 0; background: transparent; padding-left: 0; color: var(--green); font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+    .quick-formula { gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .formula-step { border: 0; border-right: 1px solid var(--line); border-radius: 0; background: transparent; padding: 24px 20px; }
+    .formula-step:last-child { border-right: 0; }
+    .formula-step span { font-size: .67rem; color: var(--green); letter-spacing: .14em; }
+    .formula-step b { font-family: Georgia, serif; font-weight: 400; }
+    main section { padding: clamp(70px, 9vw, 118px) 0; }
+    h2 { font-size: clamp(2.7rem, 5.5vw, 5rem); font-weight: 400; line-height: .95; }
+    .lede { color: var(--muted); }
+    .chip { border-radius: 0; background: transparent; font-size: .68rem; letter-spacing: .11em; text-transform: uppercase; font-weight: 600; }
+    .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+    .grid, .sauce-grid, .pantry { gap: 0; border-top: 1px solid var(--line); }
+    .card { background: transparent; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; padding: 26px; }
+    .grid .card:nth-child(3n), .pantry .card:nth-child(3n), .sauce-grid .card:nth-child(2n) { border-right: 0; }
+    .card h3 { font-size: 1.55rem; }
+    .tag { border-radius: 0; background: transparent; padding: 0 8px 0 0; color: var(--green); text-transform: uppercase; letter-spacing: .12em; font-size: .64rem; }
+    .ingredients strong { color: var(--green); }
+    details summary { color: var(--ink); text-transform: uppercase; font-size: .7rem; letter-spacing: .12em; font-weight: 600; }
+    .sauce { border-left: 0; }
+    .sauce:nth-child(2n) { border-left: 0; }
+    .pickle-item { border-radius: 0; background: transparent; }
+    .master-brine { border-radius: 0; background: var(--ink); }
+    .master-brine h3 { color: var(--paper); font-style: italic; }
+    .note { border-radius: 0; background: var(--panel); border-color: var(--line); }
+    .bread .card:first-child { background: var(--green); border-color: var(--green); }
+    .bread .card:first-child h3 { color: var(--paper); font-style: italic; }
+    .steps li::before { border-radius: 0; background: var(--ink); color: var(--paper); font-size: .72rem; }
+    .prep-grid, .fruit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+    .prep-grid { grid-template-columns: 1.1fr .9fr; }
+    .method-number { display: block; margin-bottom: 24px; color: var(--green); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; }
+    .fruit-pair { min-height: 235px; }
+    .fruit-pair em { display: block; margin: 12px 0; font-family: Georgia, serif; font-size: 1.12rem; color: var(--green); }
+    footer { background: var(--ink); }
+    @media (max-width: 820px) {
+      .grid .card:nth-child(3n), .pantry .card:nth-child(3n) { border-right: 1px solid var(--line); }
+      .grid .card:nth-child(2n), .pantry .card:nth-child(2n) { border-right: 0; }
+      .fruit-grid { grid-template-columns: repeat(2, 1fr); }
+      .fruit-grid .card:nth-child(3n) { border-right: 1px solid var(--line); }
+      .fruit-grid .card:nth-child(2n) { border-right: 0; }
+    }
+    @media (max-width: 600px) {
+      .hero-card { min-height: 560px; background-position: 67% center; }
+      .hero-card::after { background: linear-gradient(0deg, rgba(238,234,227,.98) 0%, rgba(238,234,227,.9) 55%, rgba(238,234,227,.02) 100%); }
+      .hero-copy { align-self: end; }
+      .quick-formula { border-bottom: 0; }
+      .formula-step { border-right: 0; border-bottom: 1px solid var(--line); }
+      .grid .card, .pantry .card, .sauce-grid .card, .fruit-grid .card { border-right: 0 !important; }
+      .prep-grid, .fruit-grid { grid-template-columns: 1fr; }
+    }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
@@ -139,6 +225,8 @@
       <nav class="index" aria-label="Page index">
         <a href="#bowls">Bowls</a>
         <a href="#sauces">Sauces</a>
+        <a href="#prep">Smoky corn</a>
+        <a href="#fruit">Fruit</a>
         <a href="#pickles">Pickles</a>
         <a href="#scoops">Scoops</a>
         <a href="#pantry">Nuts & seeds</a>
@@ -185,7 +273,7 @@
         <div class="grid" id="bowl-grid">
           <article class="card bowl" data-tags="fish mediterranean" data-name="Pura Vida salmon">
             <div class="tags"><span class="tag">fish</span><span class="tag">house favorite</span></div><h3>Pura Vida salmon</h3>
-            <ul class="ingredients"><li><strong>Base</strong> broccoli + romaine + Pacha toast</li><li><strong>Bright</strong> corn, avocado, pickled onion, feta</li><li><strong>Herbs</strong> cilantro</li><li><strong>Crunch</strong> walnuts + hemp or pumpkin seeds</li><li><strong>Sauce</strong> Pura Vida–ish cilantro</li></ul>
+            <ul class="ingredients"><li><strong>Base</strong> broccoli + romaine + Pacha toast</li><li><strong>Bright</strong> smoky corn, avocado, pickled onion, feta; optional mango</li><li><strong>Herbs</strong> cilantro</li><li><strong>Crunch</strong> walnuts + hemp or pumpkin seeds</li><li><strong>Sauce</strong> Pura Vida–ish cilantro</li></ul>
           </article>
           <article class="card bowl" data-tags="shrimp asian" data-name="Sesame shrimp crunch">
             <div class="tags"><span class="tag">shrimp</span><span class="tag">Asian</span></div><h3>Sesame shrimp crunch</h3>
@@ -233,6 +321,46 @@
           <article class="card sauce"><h3>Spicy soy-ginger</h3><p>Salty, sharp and fresh—not heavy.</p><details><summary>Recipe + pairings</summary><p>Whisk 2 Tbsp GF tamari, 1 Tbsp rice vinegar, lime, grated ginger, 1 tsp sesame oil and chili. Thin with water to taste.</p><p><b>Use with:</b> shrimp, tofu, salmon, cucumber and carrots.</p></details></article>
           <article class="card sauce"><h3>Egg-free Caesar</h3><p>A sharp, creamy bridge between greens and broccoli.</p><details><summary>Recipe + pairings</summary><p>Blend ½ cup Greek yogurt or cottage cheese with lemon, Dijon, parmesan, garlic, black pepper and enough water to pour. Add capers for extra savory flavor.</p><p><b>Use with:</b> romaine, broccoli, Brussels sprouts, Pacha croutons and any simple protein.</p></details></article>
           <article class="card sauce"><h3>Spicy cilantro-lime</h3><p>The shortcut from bowl to taco-night flavor.</p><details><summary>Recipe + pairings</summary><p>Blend ½ cup yogurt or cottage cheese with cilantro, lime, jalapeño or hot sauce, cumin and salt.</p><p><b>Use with:</b> turkey, corn, avocado, cauliflower and black beans.</p></details></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prep">
+      <div class="wrap">
+        <div class="section-head"><div><h2>Smoky roasted corn</h2><p class="lede">The important move is drying the corn and letting it sit long enough to char. Lime goes on after cooking.</p></div></div>
+        <div class="prep-grid">
+          <article class="card">
+            <span class="method-number">Skillet method · best char</span>
+            <h3>For 2 cups of corn</h3>
+            <ol class="steps">
+              <li>Thaw frozen corn, or drain canned corn. Pat it very dry.</li>
+              <li>Heat a wide cast-iron or heavy skillet over medium-high until properly hot.</li>
+              <li>Toss corn with 1 teaspoon olive oil, ½ teaspoon smoked paprika, ¼ teaspoon cumin, chili and salt.</li>
+              <li>Add it in one layer. Leave it untouched for 2–3 minutes, then stir and cook another 4–5 minutes.</li>
+              <li>Finish off the heat with lime and chopped cilantro. Add feta only after it cools slightly.</li>
+            </ol>
+          </article>
+          <article class="card">
+            <span class="method-number">Oven method · hands-off</span>
+            <h3>For a larger batch</h3>
+            <p>Heat the oven and an empty sheet pan to <b>450°F / 230°C</b>. Toss dry corn with oil and seasonings, spread it onto the hot pan, and roast for 15–20 minutes. Stir once near the end.</p>
+            <details><summary>Make it more smoky</summary><p>Add a pinch of chipotle powder. Smoked paprika gives aroma; chipotle adds both smoke and heat.</p></details>
+            <details><summary>Keep it from steaming</summary><p>Use a wide pan, dry the corn thoroughly, and avoid crowding. A packed pan traps moisture instead of browning.</p></details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fruit">
+      <div class="wrap">
+        <div class="section-head"><div><h2>Fruit pairings</h2><p class="lede">Use fruit as a bright accent—about ¼ to ⅓ cup per bowl—then balance its sweetness with pickle, citrus, herbs or chili.</p></div></div>
+        <div class="fruit-grid">
+          <article class="card fruit-pair"><span class="method-number">01 · lush + spicy</span><h3>Mango + salmon</h3><em>Cilantro, cucumber, pickled onion</em><p>Add avocado, cashews or hemp, then finish with spicy aioli and tamari-lime.</p></article>
+          <article class="card fruit-pair"><span class="method-number">02 · tart + salty</span><h3>Pomegranate + salmon or haddock</h3><em>Feta, parsley, pickled red onion</em><p>Finish with walnuts and lemon-herb tahini. Keep the arils fresh rather than pickling them.</p></article>
+          <article class="card fruit-pair"><span class="method-number">03 · sweet + ginger</span><h3>Pineapple + shrimp, tofu or chicken</h3><em>Cucumber, carrot, scallion</em><p>Add cashews and spicy soy-ginger dressing. Char the pineapple if the rest of the bowl is warm.</p></article>
+          <article class="card fruit-pair"><span class="method-number">04 · citrus + savory</span><h3>Orange + tuna, sardines or bass</h3><em>Cucumber, tomato, basil or dill</em><p>Add walnuts and a sharp lemon-Dijon vinaigrette. Remove the white pith for a cleaner flavor.</p></article>
+          <article class="card fruit-pair"><span class="method-number">05 · crisp + creamy</span><h3>Apple + chicken salad</h3><em>Celery, dill, cornichons</em><p>Add walnuts and a cottage-cheese Dijon dressing. A tart, crisp apple works best.</p></article>
+          <article class="card fruit-pair"><span class="method-number">06 · juicy + peppery</span><h3>Peach + shrimp or tofu</h3><em>Basil, cucumber, pickled carrot</em><p>Add cashews and chili-lime dressing. Grill the peach when you want a warmer bowl.</p></article>
         </div>
       </div>
     </section>
