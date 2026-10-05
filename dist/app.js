@@ -82,4 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
   document.querySelectorAll('.bowl-card').forEach(card=>card.hidden=button.dataset.filter!=='all'&&!card.dataset.tags.split(' ').includes(button.dataset.filter));
  }));
+
+ const completedBatchSteps = new Set(JSON.parse(localStorage.getItem('bowlBookBatchSteps') || '[]'));
+ document.querySelectorAll('[data-batch-check]').forEach(input => {
+  input.checked = completedBatchSteps.has(input.dataset.batchCheck);
+  input.addEventListener('change', () => {
+   const completed = [...document.querySelectorAll('[data-batch-check]:checked')].map(item=>item.dataset.batchCheck);
+   localStorage.setItem('bowlBookBatchSteps', JSON.stringify(completed));
+  });
+ });
+
+ document.querySelectorAll('[data-load-plan]').forEach(button => button.addEventListener('click', () => {
+  const saved = new Set(JSON.parse(localStorage.getItem('bowlBookReady') || '[]'));
+  button.dataset.loadPlan.split('|').forEach(item => saved.add(item));
+  localStorage.setItem('bowlBookReady', JSON.stringify([...saved]));
+  const status = button.parentElement.querySelector('.load-status');
+  if (status) status.textContent = 'Added. These components will now be prioritized on Tonight.';
+ }));
 });
